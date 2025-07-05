@@ -1,0 +1,16 @@
+{
+  "name": "mm2-cluster-link",
+  "connector.class": "org.apache.kafka.connect.mirror.MirrorSourceConnector",
+  "tasks.max": "1",
+  "clusters": "us-east-1, us-west-2",
+  "us-east-1.bootstrap.servers": "b-1.use1.kafka.amazonaws.com:9092",
+  "us-west-2.bootstrap.servers": "b-1.usw2.kafka.amazonaws.com:9092",
+  "us-east-1->us-west-2.enabled": "true",
+  "us-east-1->us-west-2.topics": ".*",
+  "us-east-1->us-west-2.emit.checkpoints.enabled": "true",
+  "us-east-1->us-west-2.emit.heartbeats.enabled": "true",
+  "us-west-2->us-east-1.enabled": "false",
+  "replication.policy.class": "org.apache.kafka.connect.mirror.DefaultReplicationPolicy",
+  "sync.topic.acls.enabled": "true",
+  "emit.checkpoints.interval.seconds": "10"
+}

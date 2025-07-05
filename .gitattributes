@@ -1,0 +1,9 @@
+# Normalize all text files to LF on commit
+* text=auto
+
+# Explicitly handle specific files
+*.ps1 text eol=crlf
+*.sh  text eol=lf
+*.tf  text eol=lf
+*.tfvars text eol=lf
+.gitignore text eol=lf
