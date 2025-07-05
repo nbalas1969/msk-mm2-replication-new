@@ -16,7 +16,23 @@ This repository provisions a scalable, production-grade AWS infrastructure for c
 ---
 
 ## 🗂️ Project Structure
-├── main.tf                     # Root module: wires everything ├── variables.tf                # Root input declarations ├── outputs.tf                  # Root outputs from submodules ├── terraform.tfvars            # Private input values (gitignored) ├── modules/ │   ├── msk-connect/            # Defines MSK Connect connector │   ├── vpc-peering/            # Creates and routes VPC peering connection │   └── notifications/          # Sends messages to Teams, SNS, and/or SSM ├── mm2-config/                 # Contains mm2.properties and JSON configs ├── scripts/ │   ├── validate-mm2-replication.sh  # Validate connector + mirrored topics │   └── get-vpc-peering-inputs.sh    # AWS helper script (generates tfvars)
+<<root>>:\msk-mm2-mirror-project\
+├── .github\
+│   └── workflows\
+│       └── terraform.yml         # ← CI pipeline for Terraform validate + plan
+├── modules\
+│   ├── msk-connect\
+│   ├── vpc-peering\
+│   └── notifications\
+├── scripts\
+│   └── get-vpc-peering-inputs.sh
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── terraform.tfvars.example
+├── .gitignore
+├── .gitattributes               # ← (optional) Normalizes line endings across OSes
+├── README.md
 
 
 ---
