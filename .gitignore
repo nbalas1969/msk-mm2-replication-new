@@ -1,9 +1,16 @@
+# Terraform
 .terraform/
-terraform.tfstate
-terraform.tfstate.*
+*.tfstate
+*.tfstate.*
 *.tfvars
 crash.log
-*.zip
 *.log
+
+# IDEs/editors
+.vscode/
+.idea/
+*.swp
+
+# OS junk
 .DS_Store
-*.bak
+Thumbs.db
